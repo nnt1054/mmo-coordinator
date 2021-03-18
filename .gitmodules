@@ -1,0 +1,6 @@
+[submodule "gateway-test"]
+	path = gateway-test
+	url = https://nnt1054@github.com/nnt1054/gateway-test.git
+[submodule "mmo-client"]
+	path = mmo-client
+	url = https://nnt1054@github.com/nnt1054/mmo-client.git
