@@ -7,3 +7,6 @@
 [submodule "mini5-engine"]
 	path = mini5-engine
 	url = https://nn1054@github.com/nnt1054/mini5-engine.git
+[submodule "mmo-gateway"]
+	path = mmo-gateway
+	url = https://nnt1054@github.com/nnt1054/mmo-gateway.git

@@ -5,12 +5,37 @@
   "scripts": {
     "start": "node ./bin/www",
     "gateway": "npm start --prefix $PWD/gateway-test",
-    "client": "npm start --prefix $PWD/mmo-client"
+    "client": "npm start --prefix $PWD/mmo-client",
+    "test": "NODE_PATH='mmo-gateway/dist/' node dist/app.js",
+    "clean": "rimraf dist",
+    "transpile": "babel . --out-dir dist --copy-files",
+    "build": "npm-run-all clean transpile"
   },
   "dependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-transform-runtime": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/runtime": "^7.12.5",
+    "@okta/oidc-middleware": "^4.0.3",
+    "@okta/okta-sdk-nodejs": "^4.4.0",
+    "babel-plugin-module-resolver": "^4.1.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
+    "dotenv": "^8.2.0",
+    "ejs": "~2.6.1",
     "express": "~4.16.1",
-    "morgan": "~1.9.1"
+    "express-session": "^1.17.1",
+    "front-matter": "^4.0.2",
+    "http-errors": "~1.6.3",
+    "marked": "^2.0.0",
+    "morgan": "~1.9.1",
+    "nodemon": "^2.0.7",
+    "npm-run-all": "^4.1.5",
+    "pg": "^8.5.1",
+    "rimraf": "^3.0.2",
+    "sequelize": "^6.5.0",
+    "sqlite3": "^5.0.1",
+    "winston": "^3.3.3"
   }
 }

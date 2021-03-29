@@ -1,0 +1,31 @@
+{
+    "presets": [
+      "@babel/preset-env"
+    ],
+    "plugins": [
+      [
+        "@babel/plugin-transform-runtime",
+        {
+          "regenerator": true
+        }
+      ],
+      [
+        "babel-plugin-module-resolver",
+        {
+          "alias": {
+            "": "./mmo-gateway/src"
+          }
+        }
+      ],
+      ["@babel/plugin-syntax-jsx"]
+    ],
+    "ignore": [
+        "node_modules",
+        "mmo-gateway/node_modules",
+        "mmo-client/node_modules",
+        "mini5-engine/node_modules",
+        "mmo-gateway/dist",
+      	"mmo-client/build",
+        "mini5-engine/build"
+    ]
+}
