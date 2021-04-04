@@ -12,7 +12,7 @@
     "clean-client": "rimraf mmo-gateway/src/client-build",
     "_build-client": "npm run build-client --prefix $PWD/mmo-client",
     "_build-client-local": "npm run build --prefix $PWD/mmo-client",
-    "_mv-client": "mv mmo-client/client-build mmo-gateway/src/client-build",
+    "_mv-client": "mv mmo-client/build mmo-client/client-build && mv mmo-client/client-build mmo-gateway/src/client-build",
 
     "build-gateway": "npm run build --prefix $PWD/mmo-gateway",
 
