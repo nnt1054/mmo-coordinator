@@ -1,10 +1,13 @@
 var express = require('express');
 var generateGateway = require('./mmo-gateway/dist/app.js');
+var generateServerManager = require('./mmo-server-manager/dist/app.js');
 
 async function startServer(port) {
 	const app = express()
+  const serverManagerApp = await generateServerManager();
 	const gatewayApp = await generateGateway();
 
+  app.use("/manager", serverManagerApp);
 	app.use("/", gatewayApp);
 
 	const server = app.listen(port);

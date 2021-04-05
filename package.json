@@ -15,9 +15,11 @@
     "_mv-client": "mv mmo-client/build mmo-client/client-build && mv mmo-client/client-build mmo-gateway/src/client-build",
 
     "build-gateway": "npm run build --prefix $PWD/mmo-gateway",
+    "build-server-manager": "npm run build --prefix $PWD/mmo-server-manager",
 
     "gateway": "npm start --prefix $PWD/mmo-gateway",
-    "client": "npm start --prefix $PWD/mmo-client"
+    "client": "npm start --prefix $PWD/mmo-client",
+    "server-manager": "npm start --prefix $PWD/mmo-server-manager"
   },
   "dependencies": {
     "debug": "~2.6.9",

@@ -10,3 +10,6 @@
 [submodule "mmo-gateway"]
 	path = mmo-gateway
 	url = https://nnt1054@github.com/nnt1054/mmo-gateway.git
+[submodule "mmo-server-manager"]
+	path = mmo-server-manager
+	url = https://nnt1054@github.com/nnt1054/mmo-server-manager.git
