@@ -1,16 +1,26 @@
 var express = require('express');
 var generateGateway = require('./mmo-gateway/dist/app.js');
 var generateServerManager = require('./mmo-server-manager/dist/app.js');
+var generateGameServer = require('./mmo-gameserver/dist/app.js');
 
 async function startServer(port) {
 	const app = express()
-  const serverManagerApp = await generateServerManager();
+  const http = require('http').Server(app);
+
+  var server_ids = ['0001', '0002', '0003'];
+
 	const gatewayApp = await generateGateway();
+  const serverManagerApp = await generateServerManager(server_ids);
+  for (var i = 0; i < server_ids.length; i++) {
+    var server_id = server_ids[i];
+    let gameServerApp = await generateGameServer();
+    app.use(`/gs/${ server_id }`, gameServerApp);
+  }
 
   app.use("/manager", serverManagerApp);
 	app.use("/", gatewayApp);
 
-	const server = app.listen(port);
+	const server = http.listen(port);
 	server.on('error', onError);
 	server.on('listening', () => onListening(server));
 }

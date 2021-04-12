@@ -13,3 +13,6 @@
 [submodule "mmo-server-manager"]
 	path = mmo-server-manager
 	url = https://nnt1054@github.com/nnt1054/mmo-server-manager.git
+[submodule "mmo-gameserver"]
+	path = mmo-gameserver
+	url = https://nnt1054@github.com/nnt1054/mmo-gameserver.git

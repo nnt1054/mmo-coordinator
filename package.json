@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node app.js",
-    "start-client": "npm-run-all build-client build-gateway start",
-    "start-local": "npm-run-all build-client-local build-gateway start",
+    "start-client": "npm-run-all build-client build-gateway build-server-manager start",
+    "start-local": "npm-run-all build-client-local build-gateway build-server-manager start",
 
     "build-client": "npm-run-all clean-client _build-client _mv-client",
     "build-client-local": "npm-run-all clean-client _build-client-local _mv-client",
