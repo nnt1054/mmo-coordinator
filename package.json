@@ -4,19 +4,17 @@
   "private": true,
   "scripts": {
     "start": "node app.js",
-    "start-client": "npm-run-all build-client build-gateway build-server-manager start",
-    "start-local": "npm-run-all build-client-local build-gateway build-server-manager start",
-
+    "start-client": "npm-run-all build-client build-gateway build-server-manager build-gameserver start",
+    "start-local": "npm-run-all build-client-local build-gateway build-server-manager build-gameserver start",
     "build-client": "npm-run-all clean-client _build-client _mv-client",
     "build-client-local": "npm-run-all clean-client _build-client-local _mv-client",
     "clean-client": "rimraf mmo-gateway/src/client-build",
     "_build-client": "npm run build-client --prefix $PWD/mmo-client",
     "_build-client-local": "npm run build --prefix $PWD/mmo-client",
     "_mv-client": "mv mmo-client/build mmo-client/client-build && mv mmo-client/client-build mmo-gateway/src/client-build",
-
     "build-gateway": "npm run build --prefix $PWD/mmo-gateway",
     "build-server-manager": "npm run build --prefix $PWD/mmo-server-manager",
-
+    "build-gameserver": "npm run build --prefix $PWD/mmo-gameserver",
     "gateway": "npm start --prefix $PWD/mmo-gateway",
     "client": "npm start --prefix $PWD/mmo-client",
     "server-manager": "npm start --prefix $PWD/mmo-server-manager"
